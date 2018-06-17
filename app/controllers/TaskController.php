@@ -50,7 +50,7 @@ class TaskController extends Controller
 
             DB::commit();
 
-            return Response::json($Task, 201);
+            return Response::json($Task->toArray(), 201);
         } catch (Exception $e) {
             DB::rollback();
 
@@ -84,7 +84,7 @@ class TaskController extends Controller
 
             DB::commit();
 
-            return Response::json($Task, 200);
+            return Response::json($Task->toArray(), 200);
         } catch (Exception $e) {
             DB::rollback();
 

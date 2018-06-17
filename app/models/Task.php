@@ -8,20 +8,14 @@ class Task extends Eloquent
 	const PRIORITY_4 = 4;
 	const PRIORITY_5 = 5;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'tasks';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden;
+	protected $fillable = array('title', 'description', 'priority');
 
+	protected $guarded = array('id');
+
+	protected $hidden = array('created_at', 'updated_at');
+	
 	public static function getPriorityLabel($priority)
 	{
 		switch ($priority) {

@@ -30,4 +30,7 @@ Route::get('/', function () {
 	return Redirect::route('tasks_list');
 });
 
+/**
+* UI Example
+*/
 Route::get('/uiexample', array('as' => 'uiexample', 'uses' => 'TaskController@uiexample'));
